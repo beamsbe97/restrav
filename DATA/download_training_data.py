@@ -86,6 +86,7 @@ def download_fake():
 
         example_dir = Path(local_root) / "example"
         tar_files = glob.glob(str(example_dir / "*.tar"))
+        tar_files = tar_files[:int(len(tar_files) * 0.6)]
 
         print(f"Found {len(tar_files)} VidProM .tar files to extract.")
         FAKE_DIR.mkdir(parents=True, exist_ok=True)
